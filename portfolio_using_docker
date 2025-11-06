@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishakha Patil | Cloud & DevOps Engineer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Share+Tech+Mono&display=swap');
+
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth;}
+
+    :root {
+      --bg1: #1a1a40;
+      --bg2: #240046;
+      --accent1: #ff6ec7;
+      --accent2: #00eaff;
+      --accent3: #ffb703;
+      --text-light: #ffffff;
+      --text-dark: #cccccc;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      color: var(--text-light);
+      overflow-x: hidden;
+      transition: background 1s;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent2), var(--accent1));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: 500;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent2);
+      text-shadow: 0 0 10px var(--accent2);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 140px 5% 80px;
+      text-align: center;
+      background: radial-gradient(circle at top right, #2b005e, transparent 60%), 
+                  radial-gradient(circle at bottom left, #002b5e, transparent 60%);
+      background-size: cover;
+      animation: bgShift 10s infinite alternate ease-in-out;
+    }
+
+    @keyframes bgShift {
+      0% {background-position: 0% 50%;}
+      100% {background-position: 100% 50%;}
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .hero span {
+      color: var(--accent2);
+      text-shadow: 0 0 15px var(--accent2);
+    }
+
+    .tagline {
+      font-family: 'Share Tech Mono', monospace;
+      color: var(--text-dark);
+      font-size: 1.3rem;
+    }
+
+    .hero-buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 14px 35px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      text-transform: uppercase;
+      border: none;
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent2), var(--accent1));
+      color: #000;
+      box-shadow: 0 0 20px var(--accent2);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent1);
+      border: 2px solid var(--accent1);
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px var(--accent2);
+    }
+
+    /* RESUME */
+    #resumeContainer {
+      display: none;
+      margin-top: 50px;
+      animation: fadeIn 1s ease;
+    }
+
+    #resumeContainer h3 {
+      color: var(--accent2);
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px var(--accent2);
+    }
+
+    iframe {
+      width: 80%;
+      max-width: 800px;
+      height: 600px;
+      border-radius: 12px;
+      border: 2px solid var(--accent2);
+      box-shadow: 0 0 30px rgba(0,238,255,0.3);
+    }
+
+    /* SECTIONS */
+    section {padding: 80px 5%; text-align: center; opacity: 0; transform: translateY(50px); transition: all 0.8s;}
+    section.visible {opacity: 1; transform: translateY(0);}
+    h2 {font-size: 2.5rem; color: var(--accent1); margin-bottom: 20px; text-shadow: 0 0 15px var(--accent1);}
+
+    .about p {
+      max-width: 900px; margin: auto; color: var(--text-dark);
+      font-size: 1.1rem; line-height: 1.8;
+    }
+     /* Socials */
+    .hero-socials {
+      margin-top: 30px;
+    }
+
+    .hero-socials a {
+      color: var(--text-dark);
+      font-size: 2.2rem;
+      margin: 0 15px;
+      transition: color 0.3s, transform 0.3s;
+      text-decoration: none;
+    }
+
+    .hero-socials a:hover {
+      color: var(--accent);
+      transform: translateY(-5px);
+    }
+
+
+    /* SKILLS */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 25px;
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+
+    .skill {
+      background: rgba(255,255,255,0.05);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.05);
+      transition: all 0.3s;
+      color: var(--text-light);
+    }
+
+    .skill i {font-size: 2.2rem; color: var(--accent2); margin-bottom: 8px;}
+    .skill:hover {
+      background: linear-gradient(145deg, var(--accent1), var(--accent2));
+      color: #000;
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px var(--accent1);
+    }
+
+    /* PROJECTS */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .project-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 25px;
+      transition: 0.4s;
+      color: var(--text-dark);
+    }
+
+    .project-card h3 {color: var(--accent2); margin-bottom: 10px;}
+    .project-card:hover {
+      background: linear-gradient(135deg, var(--accent2), var(--accent1));
+      color: #000;
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px var(--accent1);
+    }
+
+    /* EXPERIENCE */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .experience-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: left;
+      transition: 0.4s;
+      color: var(--text-dark);
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .experience-card:hover {
+      background: linear-gradient(135deg, var(--accent2), var(--accent1));
+      color: #000;
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px var(--accent1);
+    }
+    .experience-card h3 {color: var(--accent2); margin-bottom: 8px;}
+    .experience-card h4 {color: var(--accent3); margin-bottom: 5px;}
+    .experience-card p {line-height: 1.6;}
+
+    /* CONTACT */
+    #contact p {color: var(--text-dark);
+    font-size: 1.1rem;}
+    footer {
+      text-align: center;
+      color: var(--text-dark);
+      padding: 30px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      margin-top: 50px;
+    }
+   
+     
+
+    @keyframes fadeIn {from{opacity:0;}to{opacity:1;}}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Vishakha<span>Patil</span></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm <span>Vishakha Patil</span></h1>
+      <p class="tagline">Cloud & DevOps Engineer | AWS | Docker | CI/CD | Linux</p>
+
+       <div class="hero-socials">
+        <a href="https://linkedin.com/in/vishakha-patil-541265293" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/vishHzZ" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+      </div>
+
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="showResume()">View Resume</button>
+        <a href="resume_vp.pdf" class="btn btn-secondary" download>Download Resume</a>
+      </div>
+
+      <div id="resumeContainer">
+        <h3>📄 My Resume</h3>
+        <iframe id="resumeFrame" src=""></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I’m a passionate <strong>Cloud & DevOps Engineer</strong> focused on automation and scalable infrastructure.
+      Skilled in <strong>AWS, Docker, Jenkins, Linux, Terraform</strong>, and modern CI/CD practices.
+      I love solving problems, learning emerging technologies, and building efficient cloud systems.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-grid">
+      <div class="skill"><i class="fab fa-aws"></i>AWS</div>
+      <div class="skill"><i class="fab fa-docker"></i>Docker</div>
+      <div class="skill"><i class="fab fa-linux"></i>Linux</div>
+      <div class="skill"><i class="fab fa-jenkins"></i>Jenkins</div>
+      <div class="skill"><i class="fas fa-layer-group"></i>Terraform</div>
+      <div class="skill"><i class="fab fa-github"></i>GitHub</div>
+      <div class="skill"><i class="fas fa-dharmachakra"></i>Kubernetes</div>
+      <div class="skill"><i class="fas fa-sync-alt"></i>CI/CD</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card"><h3>AWS 3-Tier Web Application</h3><p>This project demonstrates the deployment of a highly available and scalable
+three-tier web application architecture across two Availability Zones (AZs) in
+AWS. It separates the application into three logical layers: Web Tier, Application
+Tier, and Database Tier, ensuring fault tolerance, security, and performance
+optimization.
+AWS Components Involved:
+VPC, ASG, ELB, EC2, S3, RDS, NAT, API Gateway.</p></div>
+      <div class="project-card"><h3>Dockerized Portfolio</h3><p>This project showcases a personal portfolio website designed and deployed using Docker and Nginx. The website highlights professional skills, projects, and achievements, allowing visitors (like recruiters or hiring managers) to view the resume, contact the developer, and experience a modern, interactive, and fully responsive web desig.</p></div>
+      <div class="project-card"><h3>AutoGallery Uploader</h3><p>Implementation:
+The project demonstrates how cloud storage can be leveraged for scalable
+media hosting. By decoupling image storage from the application server and
+using S3, we ensure high availability, durability, and cost efficiency</p></div>
+      <div class="project-card"><h3>Linux User Management</h3><p>Designed a user creation, password setup, group assignments, and permissions
+according to predefined policies.
+Skills: User Management, Permissions, Linux Security</p></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="experience-grid">
+      <div class="experience-card">
+        <h3>CloudDevops Intern</h3>
+        <h4>CloudBlitz Technologies | jun 2025– Present</h4>
+        <p>• Worked on AWS cloud infrastructure deployment including EC2, S3, and RDS setup.<br>
+           • Implemented monitoring and security best practices using CloudWatch and IAM policies.</p>
+            • Create some project on AWS , Linux and Docker </p>
+      </div>
+
+      </div>
+      </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p style="margin-bottom: 30px; font-size: 1.1rem; color: var(--text-dark);">
+      Let’s connect! Click below to email me directly.</p>
+   <a href="https://mail.google.com/mail/u/0/?ogbl#inbox?compose=CllgCJlFlrLkcsTdpZRgltdvbGFqRlNGjxFZktrHHgWpVkqxRpKHbLxnKqMjJkNwbGbNHFDCzsV" class="btn btn-primary" style="padding: 16px 40px; border-radius: 10px; text-transform: none; border: none; font-size: 1.15rem; font-weight: 700;"><i class="fas fa-envelope" style="margin-right:10px;"></i>Email Me Directly</a>
+  </section>
+
+  <footer>
+    <p>That's All About Me</p>
+  </footer>
+
+  <script>
+    function showResume() {
+      const resumeContainer = document.getElementById("resumeContainer");
+      const frame = document.getElementById("resumeFrame");
+
+      if (resumeContainer.style.display === "block") {
+        resumeContainer.style.display = "none";
+      } else {
+        frame.src = "resume_vp.pdf";
+        resumeContainer.style.display = "block";
+        resumeContainer.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < trigger) sec.classList.add("visible");
+      });
+    });
+  </script>
+</body>
+</html>
