@@ -314,7 +314,7 @@
 
       <div class="hero-buttons">
         <button class="btn btn-primary" onclick="showResume()">View Resume</button>
-        <a href="resume_vp.pdf" class="btn btn-secondary" download>Download Resume</a>
+        <a href="Resume_Vp_updated.pdf " class="btn btn-secondary" download>Download Resume</a>
       </div>
 
       <div id="resumeContainer">
@@ -355,7 +355,7 @@ Tier, and Database Tier, ensuring fault tolerance, security, and performance
 optimization.
 AWS Components Involved:
 VPC, ASG, ELB, EC2, S3, RDS, NAT, API Gateway.</p></div>
-      <div class="project-card"><h3>Dockerized Portfolio</h3><p>This project showcases a personal portfolio website designed and deployed using Docker and Nginx. The website highlights professional skills, projects, and achievements, allowing visitors (like recruiters or hiring managers) to view the resume, contact the developer, and experience a modern, interactive, and fully responsive web desig.</p></div>
+      <div class="project-card"><h3>Dockerized Portfolio</h3><p>This project showcases a personal portfolio website designed and deployed using Docker and Nginx. The website highlights professional skills, projects, and achievements, allowing visitors (like recruiters or hiring managers) to view the resume, contact the developer, and experience a modern, interactive, and fully responsive web design.</p></div>
       <div class="project-card"><h3>AutoGallery Uploader</h3><p>Implementation:
 The project demonstrates how cloud storage can be leveraged for scalable
 media hosting. By decoupling image storage from the application server and
@@ -399,7 +399,7 @@ Skills: User Management, Permissions, Linux Security</p></div>
       if (resumeContainer.style.display === "block") {
         resumeContainer.style.display = "none";
       } else {
-        frame.src = "resume_vp.pdf";
+        frame.src = "Resume_Vp_updated.pdf";
         resumeContainer.style.display = "block";
         resumeContainer.scrollIntoView({ behavior: "smooth" });
       }
